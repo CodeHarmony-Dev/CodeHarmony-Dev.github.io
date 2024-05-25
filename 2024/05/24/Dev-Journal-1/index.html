@@ -1,0 +1,246 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>[Dev-Journal] 01 | CodeHarmony 代码和声</title><meta name="author" content="代码和声"><meta name="copyright" content="代码和声"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="0、项目背景介绍学校的 c++ 课程要求在期末前完成一个大作业，需求大致是以综艺节目《最强大脑》第11季第三期中的“植此青绿”为基础玩法制作一个游戏。 由于直接使用 C++ 框架开发现代GUI难度比较大（其实就是想把游戏做得好看一些 &#x3D; &#x3D; ），又考虑到本程序对性能需求不大，故使用Qt框架下的QWebEngine控件，使用Vue编写界面，使用C++编写项目核心部分，采取前后端分">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[Dev-Journal] 01">
+<meta property="og:url" content="http://example.com/2024/05/24/Dev-Journal-1/index.html">
+<meta property="og:site_name" content="CodeHarmony 代码和声">
+<meta property="og:description" content="0、项目背景介绍学校的 c++ 课程要求在期末前完成一个大作业，需求大致是以综艺节目《最强大脑》第11季第三期中的“植此青绿”为基础玩法制作一个游戏。 由于直接使用 C++ 框架开发现代GUI难度比较大（其实就是想把游戏做得好看一些 &#x3D; &#x3D; ），又考虑到本程序对性能需求不大，故使用Qt框架下的QWebEngine控件，使用Vue编写界面，使用C++编写项目核心部分，采取前后端分">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://avatars.githubusercontent.com/u/170443064?v=4">
+<meta property="article:published_time" content="2024-05-24T14:48:32.000Z">
+<meta property="article:modified_time" content="2024-05-25T06:05:22.616Z">
+<meta property="article:author" content="代码和声">
+<meta property="article:tag" content="Dev-Journal">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://avatars.githubusercontent.com/u/170443064?v=4"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2024/05/24/Dev-Journal-1/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '[Dev-Journal] 01',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-05-25 14:05:22'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.2.0"><link rel="alternate" href="/atom.xml" title="CodeHarmony 代码和声" type="application/atom+xml">
+</head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://avatars.githubusercontent.com/u/170443064?v=4" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">2</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">1</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://raw.githubusercontent.com/CodeHarmony-Dev/picbed/main/img/photo-1479118013749-9f79d55a28d0.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="CodeHarmony 代码和声"><span class="site-name">CodeHarmony 代码和声</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">[Dev-Journal] 01</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-05-24T14:48:32.000Z" title="发表于 2024-05-24 22:48:32">2024-05-24</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-05-25T06:05:22.616Z" title="更新于 2024-05-25 14:05:22">2024-05-25</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="[Dev-Journal] 01"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="0、项目背景介绍"><a href="#0、项目背景介绍" class="headerlink" title="0、项目背景介绍"></a>0、项目背景介绍</h1><p>学校的 c++ 课程要求在期末前完成一个大作业，需求大致是以综艺节目《最强大脑》第11季第三期中的“植此青绿”为基础玩法制作一个游戏。</p>
+<p>由于直接使用 C++ 框架开发现代GUI难度比较大（其实就是想把游戏做得好看一些 &#x3D; &#x3D; ），又考虑到本程序对性能需求不大，故使用Qt框架下的QWebEngine控件，使用Vue编写界面，使用C++编写项目核心部分，采取前后端分离开发模式，使用QWebChannel进行前后端通信；由于程序的开发涉及Web全栈技术，故使用Visual Studio Code作为编辑器，进行开发与测试。</p>
+<h1 id="1、Qt-CMake环境搭建"><a href="#1、Qt-CMake环境搭建" class="headerlink" title="1、Qt + CMake环境搭建"></a>1、Qt + CMake环境搭建</h1><p>[2024&#x2F;4&#x2F;4] 清明节蹲宿舍敲代码(((</p>
+<p>把 Qt 的环境搭起来是一件非常令人头秃的一件事情，更何况我用的还是 VSCode。而且更头疼的事情是，由于开发过程中要用 QWebengine，这个东西不支持 MinGW，必须得用 MSVC 进行编译，这让我这种 g++ 忠实用户非常的窒息。我曾天真的以为我不需要使用VS这种肥胖的东西，但是我还是太天真了。。。</p>
+<p>言归正传，Qt+CMake 环境的搭建包括 <strong>Qt 的安装</strong>、<strong>CMake 的安装</strong>、<strong>MSVC 的安装</strong>、<strong>Qt 开发套件配置</strong> 四步。</p>
+<h2 id="1-1-安装Qt"><a href="#1-1-安装Qt" class="headerlink" title="1.1 安装Qt"></a>1.1 安装Qt</h2><p>首先去下个 Qt 的安装包(真大啊。。)</p>
+<p>注：后期开发过程中发现 Qt 版本过低，换到了 6.7 </p>
+<p><img src="https://raw.githubusercontent.com/CodeHarmony-Dev/picbed/main/img/image-20240404233602284-1712249671499-15.png" alt="Qt安装包"></p>
+<p>注册并登陆、选择安装路径后，选择需要的配置。对于编译器的选择，最简单的当然还是MinGW编译器，但是本冤种由于需要 QWebengine，所以必须选择 MSVC 编译器。然后再选上其他的控件。</p>
+<p><img src="https://raw.githubusercontent.com/CodeHarmony-Dev/picbed/main/img/image-20240404234432185-1712249666991-12.png" alt="image-20240404234432185"></p>
+<h2 id="1-2-CMake安装"><a href="#1-2-CMake安装" class="headerlink" title="1.2 CMake安装"></a>1.2 CMake安装</h2><p>由于本来就装着CMake，这部分不多赘述，只需网上下载安装包，安装并配置环境变量即可。</p>
+<h2 id="1-3-MSVC安装"><a href="#1-3-MSVC安装" class="headerlink" title="1.3 MSVC安装"></a>1.3 MSVC安装</h2><p>这部分烧了不少脑细胞。由于不想把 VS 装电脑里，所以我选择只安装 MSVC 编译器，但由于后期这种配置会造成CMake 报错，所以需要多装一点东西。<a target="_blank" rel="noopener" href="https://visualstudio.microsoft.com/zh-hans/visual-cpp-build-tools/">下载VS生成工具</a></p>
+<p>经过长时间的查找，最终发现需要下载整套工具。</p>
+<p><img src="https://raw.githubusercontent.com/CodeHarmony-Dev/picbed/main/img/image-20240404235045401-1712249658681-9.png" alt="image-20240404235045401"></p>
+<p>下载后需要启动安装目录&#x2F;Tools&#x2F;VsDevCmd.bat以配置环境变量。</p>
+<h2 id="1-4-配置编译套件"><a href="#1-4-配置编译套件" class="headerlink" title="1.4 配置编译套件"></a>1.4 配置编译套件</h2><p>在安装好的Qt目录下，找到 &#x2F;Tools&#x2F;QtCreator&#x2F;bin&#x2F;qtcreator.exe，我们就成功启动Qt给我们提供的IDE拉！</p>
+<p><img src="https://raw.githubusercontent.com/CodeHarmony-Dev/picbed/main/img/image-20240404235608969.png" alt="image-20240404235608969"></p>
+<p>找到工具-&gt;选项-&gt; Kits，理想情况下，Qt 会自动检测出编译套件，而且没有警告。如果没有检测出来，就需要手动配置编译器，调试器以及 CMake 的路径。</p>
+<p><img src="https://raw.githubusercontent.com/CodeHarmony-Dev/picbed/main/img/image-20240405002640513-1712249650530-6.png" alt="image-20240405002640513"></p>
+<p>这里有个坑，可能会显示VC的ABI与当前Qt的ABI不一致，这时需要点击右上方的编译器，选择你的编译器并手动配置ABI</p>
+<p><img src="https://raw.githubusercontent.com/CodeHarmony-Dev/picbed/main/img/image-20240405002750031-1712249643489-3.png" alt="image-20240405002750031"></p>
+<p>至此，Qt 的配置完毕，现在可以用 Qt Creator 敲代码了。Qt Creator作为 Qt 官方 IDE ，它能为我们提供良好的项目构建、调试、测试、发布功能。</p>
+<p>但是，作为一个忠实的 VSCode 用户，秉持着使用 VSCod 搭建全部开发环境的理念，以及拒绝除了 VSCode 以外的笨重丑陋 IDE 的精神(大雾)，也为正式开发的前后端单仓库提供支持，我还是选择使用 VSCode 作为 Qt 开发的主战场。</p>
+<h1 id="2-、VSCode-Qt-环境搭建"><a href="#2-、VSCode-Qt-环境搭建" class="headerlink" title="2 、VSCode Qt 环境搭建"></a>2 、VSCode Qt 环境搭建</h1><p>需要在vsc中安装如下插件：C&#x2F;C++、CMake、CMake Tools、Qt Configure、Qt Tools</p>
+<p>各个插件作用如下：</p>
+<ul>
+<li>C&#x2F;C++ : 为c++开发提供IntelliSense 支持、代码补全、高亮显示等基础功能</li>
+<li>CMake : 为CMakeLists.txt文件提供代码补全、高亮等支持</li>
+<li>CMake Tools : 为CMake提供命令封装，在下方状态栏显示生成、调试、运行等按钮，以及在侧边栏显示CMake相关支持</li>
+<li>Qt Configure : 为VSCode提供Qt项目构建支持，并生成launch.json以便于调试</li>
+<li>Qt Tools : 可以便捷地在 VSCode 中打开 Qt Designer 和 Qt Creator（其实我基本用不到）</li>
+</ul>
+<p>插件安装完毕后，开始配置开发环境。</p>
+<p>首先在 Qt Configure 的设置中配置Qt的安装目录以及套件目录</p>
+<p><img src="https://raw.githubusercontent.com/CodeHarmony-Dev/picbed/main/img/image-20240405004028189.png" alt="image-20240405004028189"></p>
+<p>Ctrl+Shift+P 打开命令窗口，输入命令并根据提示填写项目信息</p>
+<p><img src="https://raw.githubusercontent.com/CodeHarmony-Dev/picbed/main/img/image-20240405005244588-1712249680161-18.png" alt="image-20240405005244588"></p>
+<p>我们发现 Qt Configure 插件根据我们填写的信息为我们配置了CMake 清单以及 launch.json（显示在运行与测试栏中）</p>
+<p><img src="https://raw.githubusercontent.com/CodeHarmony-Dev/picbed/main/img/image-20240405005615486.png" alt="image-20240405005615486"></p>
+<p>然后 Ctrl+Shift+P 打开命令窗口，输入命令配置c++环境</p>
+<p><img src="https://raw.githubusercontent.com/CodeHarmony-Dev/picbed/main/img/image-20240405005822531.png" alt="image-20240405005822531"></p>
+<p>主要改动 include 路径，这将影响 IntelliSence 能否识别到 Qt 库的头文件</p>
+<p><img src="https://raw.githubusercontent.com/CodeHarmony-Dev/picbed/main/img/image-20240405005915556.png" alt="image-20240405005915556"></p>
+<p>最后再 setting.json 配置 CMake 的生成器，以及运行时的环境变量，让运行时的程序能够加载Qt的库文件</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// .vscode/setting.json</span></span><br><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">	<span class="attr">&quot;cmake.generator&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Visual Studio 17 2022&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;cmake.environment&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;PATH&quot;</span><span class="punctuation">:</span> <span class="string">&quot;D:/Qt/Qt5.12.12/5.12.12/msvc2017_64/bin&quot;</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>然后，点击下方状态栏的运行，就可以愉快地运行我们的程序拉！</p>
+<p>不过我们发现构建出来的 .exe 文件在一堆杂乱的文件中，这些是构建过程中产生的中间文件，所以还需要配置打包命令来将构建完成的文件放入 dist 文件夹中，这就留给后面正式配置开发环境的时候再来吧（&#x3D; - &#x3D;）</p>
+<h1 id="3-、Vue3-Qt-混合开发环境搭建"><a href="#3-、Vue3-Qt-混合开发环境搭建" class="headerlink" title="3 、Vue3 + Qt 混合开发环境搭建"></a>3 、Vue3 + Qt 混合开发环境搭建</h1><p>[2024&#x2F;4&#x2F;5] 继续敲，敲完出去玩 o(<em>￣▽￣</em>)ブ</p>
+<p>采用单仓库形式，前端文件放在 &#x2F;front，后端文件放在&#x2F;，调试文件放在 &#x2F;build，发布文件放在 &#x2F;dist</p>
+<h2 id="3-1-基础环境搭建"><a href="#3-1-基础环境搭建" class="headerlink" title="3.1 基础环境搭建"></a>3.1 基础环境搭建</h2><p>按之前的方法在根目录下配置qt开发环境</p>
+<p>然后使用 npm 搭建 vue3 环境</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm create vite@latest</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="3-2-配置命令"><a href="#3-2-配置命令" class="headerlink" title="3.2 配置命令"></a>3.2 配置命令</h2><p>基础环境搭建完毕后，需要封装一些指令以便后期的开发、调试、打包</p>
+<h3 id="3-2-1-前端命令封装"><a href="#3-2-1-前端命令封装" class="headerlink" title="3.2.1 前端命令封装"></a>3.2.1 前端命令封装</h3><p>由于需要将 &#x2F;front&#x2F;dist 下的文件存入 resource.qrc 以供 Qt 使用，所以编写了脚本来实现这个功能</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">from</span> xml.etree.ElementTree <span class="keyword">import</span> Element, SubElement, tostring</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">generate_qrc</span>(<span class="params">file_path: <span class="built_in">str</span>, folder_path: <span class="built_in">str</span>, prefix: <span class="built_in">str</span> = <span class="string">&quot;/&quot;</span></span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    生成包含指定文件夹内所有文件的 .qrc 文件。</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">    参数:</span></span><br><span class="line"><span class="string">    file_path (str): 输出的 .qrc 文件路径。</span></span><br><span class="line"><span class="string">    folder_path (str): 需要包含为资源的文件夹路径。</span></span><br><span class="line"><span class="string">    prefix (str, optional): 资源前缀，默认为 &quot;/&quot;。</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">	folder_path = os.path.abspath(folder_path)</span><br><span class="line">    root = Element(<span class="string">&quot;RCC&quot;</span>)</span><br><span class="line">    qresource = SubElement(root, <span class="string">&quot;qresource&quot;</span>, &#123;<span class="string">&quot;prefix&quot;</span>: prefix&#125;)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> dirpath, _, filenames <span class="keyword">in</span> os.walk(folder_path):</span><br><span class="line">        rel_dirpath = os.path.relpath(dirpath, folder_path)</span><br><span class="line">        <span class="keyword">for</span> filename <span class="keyword">in</span> filenames:</span><br><span class="line">            rel_filepath = os.path.join(rel_dirpath, filename).replace(os.sep, <span class="string">&quot;/&quot;</span>)</span><br><span class="line">            rel_filepath = rel_filepath[<span class="number">1</span>:] <span class="keyword">if</span> rel_filepath.startswith(<span class="string">&quot;.&quot;</span>) <span class="keyword">else</span> rel_filepath</span><br><span class="line">            file_element = SubElement(qresource, <span class="string">&quot;file&quot;</span>, &#123;<span class="string">&quot;alias&quot;</span>: rel_filepath&#125;)</span><br><span class="line">            full_path = os.path.join(folder_path, filename)</span><br><span class="line">            file_element.text = <span class="string">f&quot;<span class="subst">&#123;full_path&#125;</span>&quot;</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(file_path, <span class="string">&quot;w&quot;</span>) <span class="keyword">as</span> f:</span><br><span class="line">        f.write(tostring(root, encoding=<span class="string">&quot;unicode&quot;</span>))</span><br><span class="line"></span><br><span class="line">generate_qrc(<span class="string">&quot;./src/resource.qrc&quot;</span>, <span class="string">&quot;./front/dist&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>然后配置 tasks.json </p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">			<span class="attr">&quot;label&quot;</span><span class="punctuation">:</span> <span class="string">&quot;build qrc&quot;</span><span class="punctuation">,</span></span><br><span class="line">			<span class="attr">&quot;type&quot;</span><span class="punctuation">:</span> <span class="string">&quot;shell&quot;</span><span class="punctuation">,</span></span><br><span class="line">			<span class="attr">&quot;command&quot;</span><span class="punctuation">:</span> <span class="string">&quot;python qrc.py&quot;</span><span class="punctuation">,</span></span><br><span class="line">			<span class="attr">&quot;options&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">				<span class="attr">&quot;cwd&quot;</span><span class="punctuation">:</span> <span class="string">&quot;$&#123;workspaceFolder&#125;&quot;</span><span class="punctuation">,</span></span><br><span class="line">				<span class="attr">&quot;statusbar&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">					<span class="attr">&quot;hide&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span></span><br><span class="line">				<span class="punctuation">&#125;</span></span><br><span class="line">			<span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">			<span class="attr">&quot;problemMatcher&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="punctuation">]</span></span><br><span class="line">		<span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>然后在 &#x2F;.vscode&#x2F;tasks.json 下配置前端命令</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&quot;tasks&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">		<span class="punctuation">&#123;</span></span><br><span class="line">			<span class="attr">&quot;type&quot;</span><span class="punctuation">:</span> <span class="string">&quot;npm&quot;</span><span class="punctuation">,</span></span><br><span class="line">			<span class="attr">&quot;script&quot;</span><span class="punctuation">:</span> <span class="string">&quot;dev&quot;</span><span class="punctuation">,</span></span><br><span class="line">			<span class="attr">&quot;path&quot;</span><span class="punctuation">:</span> <span class="string">&quot;front&quot;</span><span class="punctuation">,</span></span><br><span class="line">			<span class="attr">&quot;problemMatcher&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">			<span class="attr">&quot;label&quot;</span><span class="punctuation">:</span> <span class="string">&quot;$(bug) debug front&quot;</span><span class="punctuation">,</span></span><br><span class="line">			<span class="attr">&quot;detail&quot;</span><span class="punctuation">:</span> <span class="string">&quot;vite&quot;</span></span><br><span class="line">		<span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">		<span class="punctuation">&#123;</span></span><br><span class="line">			<span class="attr">&quot;type&quot;</span><span class="punctuation">:</span> <span class="string">&quot;npm&quot;</span><span class="punctuation">,</span></span><br><span class="line">			<span class="attr">&quot;script&quot;</span><span class="punctuation">:</span> <span class="string">&quot;build&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;dependsOn&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">				<span class="string">&quot;build qrc&quot;</span></span><br><span class="line">			<span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">			<span class="attr">&quot;path&quot;</span><span class="punctuation">:</span> <span class="string">&quot;front&quot;</span><span class="punctuation">,</span></span><br><span class="line">			<span class="attr">&quot;group&quot;</span><span class="punctuation">:</span> <span class="string">&quot;build&quot;</span><span class="punctuation">,</span></span><br><span class="line">			<span class="attr">&quot;problemMatcher&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">			<span class="attr">&quot;label&quot;</span><span class="punctuation">:</span> <span class="string">&quot;$(package) build front&quot;</span><span class="punctuation">,</span></span><br><span class="line">			<span class="attr">&quot;detail&quot;</span><span class="punctuation">:</span> <span class="string">&quot;vue-tsc &amp;&amp; vite build&quot;</span></span><br><span class="line">		<span class="punctuation">&#125;</span></span><br><span class="line">	<span class="punctuation">]</span></span><br></pre></td></tr></table></figure>
+
+<p>配合 Tasks 插件，可以将 tasks 显示在下方状态栏</p>
+<p><img src="https://raw.githubusercontent.com/CodeHarmony-Dev/picbed/main/img/image-20240405162329970.png" alt="image-20240405162329970"></p>
+<h3 id="3-2-2-后端命令封装"><a href="#3-2-2-后端命令封装" class="headerlink" title="3.2.2 后端命令封装"></a>3.2.2 后端命令封装</h3><p>在 CMakeList.txt 中引入 qrc 文件，并配置头文件引入路径</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">add_executable</span>(<span class="variable">$&#123;PROJECT_NAME&#125;</span></span><br><span class="line">    WIN32 <span class="comment"># If you need a terminal for debug, please comment this statement </span></span><br><span class="line">    <span class="variable">$&#123;srcs&#125;</span> </span><br><span class="line">    ./src/resource.qrc</span><br><span class="line">) </span><br><span class="line"><span class="keyword">target_include_directories</span>(common PUBLIC <span class="variable">$&#123;CMAKE_CURRENT_SOURCE_DIR&#125;</span>/src)</span><br></pre></td></tr></table></figure>
+
+
+
+<p>在 CMakeLists.txt 下配置安装路径，这将会让目标文件生成在 &#x2F;dist 中</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">install</span>(TARGETS <span class="variable">$&#123;PROJECT_NAME&#125;</span> DESTINATION <span class="variable">$&#123;PROJECT_SOURCE_DIR&#125;</span>/dist)</span><br></pre></td></tr></table></figure>
+
+<p>由于 CMake 构建出来的文件不带 Qt 依赖，需要使用 windeployqt.exe 来补全依赖，故编写一个 .bat 脚本来对 &#x2F;dist 中的每一个 .exe 文件执行依赖补全，其中 %1 变量由 VSCode 调用 Qt Configure 的路径来传递</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">:: windeployqt.bat</span><br><span class="line">for %%i in (*.exe) do (%1 %%i) </span><br></pre></td></tr></table></figure>
+
+<p>然后在 tasks.json 中配置打包命令</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">			<span class="attr">&quot;label&quot;</span><span class="punctuation">:</span> <span class="string">&quot;cmake-install&quot;</span><span class="punctuation">,</span></span><br><span class="line">			<span class="attr">&quot;type&quot;</span><span class="punctuation">:</span> <span class="string">&quot;shell&quot;</span><span class="punctuation">,</span></span><br><span class="line">			<span class="attr">&quot;command&quot;</span><span class="punctuation">:</span> <span class="string">&quot;cmake&quot;</span><span class="punctuation">,</span></span><br><span class="line">			<span class="attr">&quot;args&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">				<span class="string">&quot;--build&quot;</span><span class="punctuation">,</span></span><br><span class="line">				<span class="string">&quot;$&#123;workspaceFolder&#125;/build&quot;</span><span class="punctuation">,</span></span><br><span class="line">				<span class="string">&quot;--target&quot;</span><span class="punctuation">,</span></span><br><span class="line">				<span class="string">&quot;install&quot;</span><span class="punctuation">,</span></span><br><span class="line">			<span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">			<span class="attr">&quot;options&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">				<span class="attr">&quot;cwd&quot;</span><span class="punctuation">:</span> <span class="string">&quot;$&#123;workspaceFolder&#125;&quot;</span><span class="punctuation">,</span></span><br><span class="line">				<span class="attr">&quot;statusbar&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">					<span class="attr">&quot;hide&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span></span><br><span class="line">				<span class="punctuation">&#125;</span></span><br><span class="line">			<span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">			<span class="attr">&quot;problemMatcher&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="punctuation">]</span></span><br><span class="line">		<span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">		<span class="punctuation">&#123;</span></span><br><span class="line">			<span class="attr">&quot;label&quot;</span><span class="punctuation">:</span> <span class="string">&quot;$(package) release&quot;</span><span class="punctuation">,</span></span><br><span class="line">			<span class="attr">&quot;type&quot;</span><span class="punctuation">:</span> <span class="string">&quot;shell&quot;</span><span class="punctuation">,</span></span><br><span class="line">			<span class="attr">&quot;dependsOn&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">				<span class="string">&quot;cmake-install&quot;</span></span><br><span class="line">			<span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">			<span class="attr">&quot;command&quot;</span><span class="punctuation">:</span> <span class="string">&quot;$&#123;workspaceFolder&#125;/windeployqt.bat&quot;</span><span class="punctuation">,</span></span><br><span class="line">			<span class="attr">&quot;args&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">				<span class="string">&quot;&#x27;$&#123;config:qtConfigure.qtKitDir&#125;/bin/windeployqt.exe&#x27;&quot;</span></span><br><span class="line">			<span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">			<span class="attr">&quot;options&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">				<span class="attr">&quot;cwd&quot;</span><span class="punctuation">:</span> <span class="string">&quot;$&#123;workspaceFolder&#125;/dist&quot;</span></span><br><span class="line">			<span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">			<span class="attr">&quot;problemMatcher&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="punctuation">]</span></span><br><span class="line">		<span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>成果如下：</p>
+<p><img src="https://raw.githubusercontent.com/CodeHarmony-Dev/picbed/main/img/image-20240407221309801.png" alt="image-20240407221309801"></p>
+<p>配置 CMake 的参数，给 DEV_CODE 设定值，以便区分模式</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">set</span>(CMAKE_BUILD_TYPE <span class="string">&quot;Debug&quot;</span>)</span><br><span class="line"><span class="comment"># set(CMAKE_BUILD_TYPE &quot;Release&quot;)</span></span><br><span class="line"><span class="keyword">if</span> (<span class="variable">$&#123;CMAKE_BUILD_TYPE&#125;</span> <span class="keyword">STREQUAL</span> <span class="string">&quot;Debug&quot;</span>)</span><br><span class="line"><span class="keyword">add_definitions</span>(DDEV_CODE=<span class="number">1</span>)</span><br><span class="line"><span class="keyword">message</span>(<span class="string">&quot;debug&quot;</span>)</span><br><span class="line"><span class="keyword">else</span> ()</span><br><span class="line"><span class="keyword">add_definitions</span>(DDEV_CODE=<span class="number">0</span>)</span><br><span class="line"><span class="keyword">message</span>(<span class="string">&quot;release&quot;</span>)</span><br><span class="line"><span class="keyword">endif</span> ()</span><br></pre></td></tr></table></figure>
+
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://example.com">代码和声</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2024/05/24/Dev-Journal-1/">http://example.com/2024/05/24/Dev-Journal-1/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">CodeHarmony 代码和声</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Dev-Journal/">Dev-Journal</a></div><div class="post_share"><div class="social-share" data-image="https://avatars.githubusercontent.com/u/170443064?v=4" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-full"><a href="/2024/05/25/Dev-Journal-2/" title="[Dev-Journal] 02"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">[Dev-Journal] 02</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2024/05/25/Dev-Journal-2/" title="[Dev-Journal] 02"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-05-25</div><div class="title">[Dev-Journal] 02</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://avatars.githubusercontent.com/u/170443064?v=4" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">代码和声</div><div class="author-info__description">Stay foolish.</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">2</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">1</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/CodeHarmony-Dev"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/CodeHarmony-Dev" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:code-harmony@outlook.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#0%E3%80%81%E9%A1%B9%E7%9B%AE%E8%83%8C%E6%99%AF%E4%BB%8B%E7%BB%8D"><span class="toc-text">0、项目背景介绍</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1%E3%80%81Qt-CMake%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA"><span class="toc-text">1、Qt + CMake环境搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-%E5%AE%89%E8%A3%85Qt"><span class="toc-text">1.1 安装Qt</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-CMake%E5%AE%89%E8%A3%85"><span class="toc-text">1.2 CMake安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3-MSVC%E5%AE%89%E8%A3%85"><span class="toc-text">1.3 MSVC安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-4-%E9%85%8D%E7%BD%AE%E7%BC%96%E8%AF%91%E5%A5%97%E4%BB%B6"><span class="toc-text">1.4 配置编译套件</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-%E3%80%81VSCode-Qt-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA"><span class="toc-text">2 、VSCode Qt 环境搭建</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-%E3%80%81Vue3-Qt-%E6%B7%B7%E5%90%88%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA"><span class="toc-text">3 、Vue3 + Qt 混合开发环境搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-%E5%9F%BA%E7%A1%80%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA"><span class="toc-text">3.1 基础环境搭建</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-%E9%85%8D%E7%BD%AE%E5%91%BD%E4%BB%A4"><span class="toc-text">3.2 配置命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-1-%E5%89%8D%E7%AB%AF%E5%91%BD%E4%BB%A4%E5%B0%81%E8%A3%85"><span class="toc-text">3.2.1 前端命令封装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-2-%E5%90%8E%E7%AB%AF%E5%91%BD%E4%BB%A4%E5%B0%81%E8%A3%85"><span class="toc-text">3.2.2 后端命令封装</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/05/25/Dev-Journal-2/" title="[Dev-Journal] 02">[Dev-Journal] 02</a><time datetime="2024-05-25T05:59:30.000Z" title="发表于 2024-05-25 13:59:30">2024-05-25</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/05/24/Dev-Journal-1/" title="[Dev-Journal] 01">[Dev-Journal] 01</a><time datetime="2024-05-24T14:48:32.000Z" title="发表于 2024-05-24 22:48:32">2024-05-24</time></div></div></div></div></div></div></main><footer id="footer" style="background: #57606f"><div id="footer-wrap"><div class="copyright">&copy;2024 By 代码和声</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
